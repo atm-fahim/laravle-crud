@@ -24,3 +24,13 @@ Route::get('/edit-student-info/{id}',[App\Http\Controllers\StudentInfoController
 Route::get('/publish-student-info/{id}',[App\Http\Controllers\StudentInfoController::class, 'addStudentInfo']);
 Route::get('/unpublish-student-info/{id}',[App\Http\Controllers\StudentInfoController::class, 'addStudentInfo']);*/
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
