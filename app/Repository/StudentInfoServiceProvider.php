@@ -14,8 +14,8 @@ class StudentInfoServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            'App\Repository\StudentInfoInterface',
-            'App\Repository\StudentInfoRepository'
+            '\App\Repository\StudentInfoInterface',
+            '\App\Repository\StudentInfoRepository'
         );
 
     }

@@ -6,7 +6,7 @@ interface StudentInfoInterface
 {
     public function getStudents();
     public function save($data);
-    public function getStores();
+
 
 
 
