@@ -23,13 +23,14 @@ class StudentValidationRequest extends FormRequest
      */
     public function rules()
     {
-        return ['name' => 'required|string',
+        return [
+            'name' => 'required|string',
             'gender' => 'required|string',
             'email' => 'required|string',
             'phone' => 'required|string',
             'class' => 'required|string',
             'education_year' => 'required|numeric',
-            'address' => 'required|string',
-            'photo' => 'required|string'];
+            'address' => 'required|string'
+            ];
     }
 }

@@ -67,7 +67,7 @@
             <?php
             $i = 1;
             ?>
-            @foreach($all_student_info as $v_student_info)
+            @foreach($students as $v_student_info)
             <tr>
                 <th scope="row">{{$i++}}</th>
                 <td>{{$v_student_info->name}}</td>
@@ -217,11 +217,8 @@
         let photo = $('.photo').val();
 
         let settings = {
-            "url": "{{url('save-student-info')}}",
+            "url": "{{route('students.save')}}",
             "method": "POST",
-            "timeout": 0,
-            //    "dataType": "JSON",
-
             "data": {
                 "id": id,
                 "name": name,
@@ -231,7 +228,8 @@
                 "class": clss,
                 "education_year": year,
                 "address": address,
-                "photo": photo
+                "photo": photo,
+                "token": "{{csrf_token()}}"
             }
         };
 
